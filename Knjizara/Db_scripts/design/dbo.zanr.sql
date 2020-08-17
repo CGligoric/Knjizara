@@ -1,0 +1,4 @@
+﻿CREATE TABLE zanr (
+	[id] INT IDENTITY(1,1) PRIMARY KEY,
+	[naziv] NVARCHAR(50)
+);

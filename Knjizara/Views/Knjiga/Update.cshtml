@@ -1,0 +1,52 @@
+﻿@model Knjizara.ViewModels.KnjigaZanrViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Update</title>
+</head>
+<body>
+    <form method="post" action="/Knjiga/Update">
+        <table border="1">
+            <tr><th colspan="2">Osvezite podatke knjige</th></tr>
+            <tr>
+                <td>ID</td>
+                <td><input type="text" name="Id" /></td>
+            </tr>
+            <tr>
+                <td>Nov naslov</td>
+                <td><input type="text" name="Naslov" /></td>
+            </tr>
+            <tr>
+                <td>Nova cena</td>
+                <td><input type="text" name="Cena" /></td>
+            </tr>
+            <tr>
+                <td>Nov zanr</td>
+                <td>
+                    <select name="IdSelektovanogZanra">
+                        @foreach (var item in Model.SviZanrovi)
+                        {
+                            <option value="@item.Id">@item.Naziv</option>
+                        }
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Osvezi" /></td>
+            </tr>
+        </table>
+        <a href="Knjiga/Index">Vrati se na listu svih knjiga</a><br />
+    </form>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
+</body>
+</html>

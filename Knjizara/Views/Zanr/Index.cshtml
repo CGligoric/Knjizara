@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Knjizara.Models.Zanr>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h2>Svi zanrovi</h2>
+    <table border="1">
+        <tr>
+            Naziv
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Naziv
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

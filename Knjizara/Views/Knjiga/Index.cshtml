@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Knjizara.Models.Knjiga>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Lista svih knjiga</title>
+</head>
+<body>
+    <h1>Lista svih knjiga</h1>
+    <table border="1">
+        <tr>
+        <tr>
+            <th>
+                Naslov
+            </th>
+            <th>
+                Cena
+            </th>
+            <th>
+                Zanr
+            </th>
+            <th>
+                &nbsp;
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Naslov</td>
+                <td>@item.Cena</td>
+                <td>@item.Zanr.Naziv</td>
+                <td>
+                    <form method="post" action="/Knjiga/Delete">
+                        <input type="hidden" value="@item.Id" name="id" />
+                        <input type="submit" value="Obrisi" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+
+    <a href="/Knjiga/Create">Dodaj novu</a><br />
+    <a href="/Knjiga/ListDeleted">Izlistaj sve obrisane knjige</a><br />
+    <a href="/Knjiga/Update">Osvezi podatke postojece knjige</a><br />
+</body>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+</html>

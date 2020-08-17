@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "sql.js@1.3.0",
+      "destination": "Db_Skripte/design/sql.js/"
+    }
+  ]
+}
